@@ -1,0 +1,22 @@
+# Popotes Wine Tasting Application Project Structure
+
+popotes/
+│
+├── src/
+│   ├── __init__.py
+│   ├── main.py             # Main Streamlit application entry point
+│   ├── auth.py             # Authentication module
+│   ├── database.py         # Database connection and operations
+│   ├── wine_catalog.py     # Wine catalog management
+│   └── rating_system.py    # Wine rating functionality
+│
+├── config/
+│   ├── __init__.py
+│   └── settings.py         # Configuration settings
+│
+├── data/
+│   ├── wines.csv           # Sample wine catalog data
+│   └── users.db            # SQLite database for users
+│
+├── requirements.txt        # Project dependencies
+└── README.md               # Project documentation
