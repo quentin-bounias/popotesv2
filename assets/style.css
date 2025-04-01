@@ -13,8 +13,13 @@ body {
     border-radius: 8px !important;
     box-shadow: 4px 4px 0px black !important;
     background-color: white !important;
+    margin: 0.5rem 0;
   }
   
   .stNumberInput input {
     font-weight: bold;
   }  
+
+  .container {
+    margin: 0.5rem 0;
+  }
