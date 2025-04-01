@@ -1,11 +1,18 @@
 import streamlit as st
 import pandas as pd
 import os
+from utils.config import WINES_CSV, RATINGS_CSV
+from utils.auth import get_user_id
+
+# --- Data ---
+WINES_CSV = "wines.csv"
+RATINGS_CSV = "ratings.csv"
 
 # --- Load Data ---
 wines = pd.read_csv("wines.csv")
 if os.path.exists("ratings.csv"):
-    ratings = pd.read_csv("ratings.csv")
+    ratings = pd.read_csv(RATINGS_CSV)
+    ratings = ratings[ratings["user_id"] == get_user_id()]
 else:
     ratings = pd.DataFrame(columns=["wine_id", "color", "nose", "taste", "keywords", "photo", "timestamp"])
 
