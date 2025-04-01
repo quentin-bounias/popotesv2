@@ -1,6 +1,0 @@
-streamlit
-streamlit-authenticator
-google-auth
-facebook-sdk
-sqlalchemy
-pandas
