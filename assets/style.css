@@ -1,25 +1,155 @@
+/* =========================
+   GLOBAL RESET + TYPOGRAPHY
+========================= */
 body {
-    font-family: "Courier New", monospace;
-    background-color: #f5f5f5;
-  }
-  
-  h1, h2, h3, label, .stTextInput label, .stSelectbox label {
-    font-weight: 800 !important;
-    text-transform: uppercase;
-  }
-  
-  .stButton button, .stFileUploader, .stSelectbox, .stNumberInput {
-    border: 3px solid black !important;
-    border-radius: 8px !important;
-    box-shadow: 4px 4px 0px black !important;
-    background-color: white !important;
-    margin: 0.5rem 0;
-  }
-  
-  .stNumberInput input {
-    font-weight: bold;
-  }  
+  font-family: "Courier New", monospace;
+  background-color: #f5f5f5;
+}
 
-  .container {
-    margin: 0.5rem 0;
-  }
+h1,
+h2,
+h3,
+label,
+.stTextInput label,
+.stSelectbox label {
+  font-weight: 800 !important;
+  text-transform: uppercase;
+}
+
+:root {
+  --popotes-purple: #7D4CDB;
+}
+
+/* =========================
+   FORM COMPONENT STYLING
+   Brutalist boxes, shadows, borders
+========================= */
+.stButton button,
+.stFileUploader,
+.stSelectbox,
+.stNumberInput {
+  border: 3px solid black !important;
+  border-radius: 8px !important;
+  box-shadow: 4px 4px 0px black !important;
+  background-color: white !important;
+  margin: 0.5rem 0;
+}
+
+.stNumberInput input {
+  font-weight: bold;
+}
+
+/* =========================
+   TAGS (e.g. keywords)
+========================= */
+.tag {
+  background-color: black;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 4px;
+}
+
+/* =========================
+   WINE CARDS (OLD vertical layout — can be removed if not reused)
+========================= */
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.wine-card {
+  min-width: 220px;
+  height: 300px;
+  border: 3px solid black;
+  box-shadow: 4px 4px 0 black;
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.wine-card-overlay {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* =========================
+   CAROUSEL CARDS (HORIZONTAL SCROLL VERSION)
+========================= */
+.carousel-wrapper {
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 1rem 0;
+  -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+}
+
+.carousel-card {
+  display: inline-block;
+  vertical-align: top;
+  width: 70vw; /* Fits one full card and a hint of the next */
+  max-width: 300px;
+  height: 340px;
+  margin-right: 16px;
+  background-color: #fff;
+  border: 3px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0 black;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.carousel-card-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255,255,255,0.85);
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* =========================
+   RATINGS COMPONENTS
+========================= */
+
+.rating-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.rating-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: lightgray;
+  cursor: pointer;
+  border: 2px solid black;
+  position: relative;
+}
+
+.rating-circle.full {
+  background-color: var(--popotes-purple);
+}
+
+.rating-circle.half {
+  background: linear-gradient(to right, var(--popotes-purple) 50%, lightgray 50%);
+}
